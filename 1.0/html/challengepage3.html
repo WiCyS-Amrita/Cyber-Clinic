@@ -19,37 +19,41 @@ Created Date: 19 Apr 2023
 Description: Assessment Page containing Problem Description, Attachment (if any), Answer Box, Progress Bar */
 
 
-.progress {
-  background: rgba(255, 255, 255, 0.1);
-  justify-content: flex-start;
-  border-radius: 100px;
-  align-items: center;
-  position: relative;
-  padding: 0 5px;
-  display: flex;
-  height: 30px;
-  width: 400px;
-  margin-left: -12cm;
-}
+  .progress {
+    background: rgba(255, 255, 255, 0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 30px;
+    width: 400px;
+    margin-left: -12cm;
+  }
 
-.progress-value {
-  animation: load 3s normal forwards;
-  box-shadow: 0 10px 40px -10px #fff;
-  border-radius: 100px;
-  background: #fff;
-  height: 30px;
-  width: 0;
-}
-
-@keyframes load {
-  0% {
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: #fff;
+    height: 30px;
     width: 0;
   }
 
-  100% {
-    width: 60%;
+  .card1_specifies {
+    width: 14cm;
   }
-}
+
+  @keyframes load {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 60%;
+    }
+  }
 </style>
 
 <script>
@@ -132,18 +136,20 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
 
             </div>
             <div class="content biggerfont">
-              <p style="font-size: 21px;">You're a graphic designer. Sitting in your home office, sipping your cup of
-                hot coffee. <br><br> You take a deep
-                breath and open up your design software, feeling inspired by the peaceful and serene morning. <br>
-                You start sketching out ideas to create a logo for a new project, a brand identity for a client who is
-                launching a sustainable clothing line. <br>
+              <p style="font-size: 21px;">You're a 17-year-old high school student who needs to log into your online
+                college application portal. The portal contains sensitive personal information such as your grades, test
+                scores, and social security number. <br><br>You know the importance of setting a strong password to
+                protect your
+                information from hackers, so you decide to create a new password.<br><br>
 
-                The plan is to utilize the most up-to-date edition of Adobe Photoshop for creating the logo. <br><br>
-                However, a
-                genuine license for it is costly. Consequently, you opt to obtain a pirated version from the internet.
-                <br>
-                Now, you may click on the 'View Attachment' option to access the website and initiate the download of
-                the pirated version.
+                You open your laptop and navigate to the login page of the college application portal. You're prompted
+                to create a new password and start thinking about what to choose. Now, click on the attachment and start
+                entering the password.<br><br>
+
+                NOTE: You have only one attempt to set up a password. Points will be allocated on the basis of how
+                strong you set up the password.<br><br>
+                HINT: Remember to use the basic rules to be followed while setting up a password.
+
               </p>
 
               <!-- <div class="details">
@@ -155,10 +161,10 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
       </div>
 
       <div class="vertical_container">
-
-        <a href="./challengepage4.html" ><button class="buttonnext hori_move" onclick="next()">Next <span>&#8594;</span>
+        <!-- 
+        <a href="./challengepage4.html"><button class="buttonnext hori_move" onclick="next()">Next <span>&#8594;</span>
           </button></a>
-        <a><button class="buttonnext">Submit </button></a> <br>
+        <a><button class="buttonnext">Submit </button></a> <br> -->
 
         <div class="testimotionals">
           <div class="card2_specifics">
@@ -166,8 +172,10 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
               <div class="layer">
               </div>
               <div class="content">
-                <a target="_blank" href="./session1.html">
-                  <h6>View Attachment</h6>
+                <a target="_blank" href="./password_strength.html">
+                  <center>
+                    <h6>View Attachment</h6>
+                  </center>
                 </a>
                 <!-- <div class="details">
                   <h2> Someone famous <br> <span>Front end developer</span></h2>
@@ -179,20 +187,20 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
 
 
 
-        <div class="testimotionals">
+        <!-- <div class="testimotionals">
           <div class="card2_specifics">
             <div class="card">
               <div class="layer">
               </div>
               <div class="content">
                 <h6>Options:</h6>
-                <!-- <div class="details">
+                 <div class="details">
                   <h2> Someone famous <br> <span>Website designer</span></h2>
-                </div> -->
+                </div> 
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
 

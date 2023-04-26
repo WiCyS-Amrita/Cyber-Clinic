@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>CARTQ 4.0</title>
+  <title>CARTQ 5.0</title>
   <link rel="icon" href="../images/favicon.png">
   <link href="../css/challenge_body_stylesheet.css" rel="stylesheet">
   <link href="../css/challenge_card_stylesheet.css" rel="stylesheet">
@@ -50,6 +50,60 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
       width: 80%;
     }
   }
+
+  .h6_move h6 {
+    margin-top: 40px;
+  }
+
+  .checkbox-container label {
+    font-size: 18px;
+  }
+
+  .opts2 {
+    display: inline-flex;
+    line-height: 10px;
+  }
+
+  .opts22 {
+    margin-left: 40px;
+  }
+
+  .opts2 .checkbox-container input {
+    padding: 0 1px 0 10px;
+  }
+
+  .opts2:first-child {
+    margin-right: 10px;
+  }
+
+  .modal1 {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    /* set a high z-index value to make it appear on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: black;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* add some opacity to the background */
+  }
+
+  .modal-content1 {
+    background-color: #fefefe;
+    margin: 15% auto;
+    color: black;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    /* add position:relative to make sure child elements are positioned relative to this parent element */
+  }
 </style>
 
 <script>
@@ -67,6 +121,32 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
     let elapsedTime = timeCounter.textContent;
     console.log(elapsedTime);
     // do something with the elapsed time
+  }
+
+  function calculateScore() {
+    let score = 0;
+    document.getElementById('score1').innerHTML = 'Your score: ' + score;
+    showModal();
+  }
+
+  function showModal() {
+    let score = 0;
+    document.getElementById('score1').innerHTML = 'Your score: ' + score;
+    const modal = document.getElementById("scoreModal1");
+    const closeButton = document.querySelector(".close1");
+
+    modal.style.display = "block";
+
+    closeButton.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // Add this line to handle window click event properly
+    window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
   }
 </script>
 
@@ -132,18 +212,16 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
 
             </div>
             <div class="content biggerfont">
-              <p style="font-size: 21px;">You're a graphic designer. Sitting in your home office, sipping your cup of
-                hot coffee. <br><br> You take a deep
-                breath and open up your design software, feeling inspired by the peaceful and serene morning. <br>
-                You start sketching out ideas to create a logo for a new project, a brand identity for a client who is
-                launching a sustainable clothing line. <br>
+              <p style="font-size: 21px;">You are a journalist who is working on plenty of cyber crime reports. In one
+                such case, you need to directly invlove yourself in a set of scams that take place in various social
+                media platforms. <br><br> But, before you do, you need to verify each post or message of their integrity, because
+                some stray ones may be genuine. It is important that you must only engage yourselves with true social
+                media scams only.<br><br> Mistaking a genuine account for a scam mey lead to personal offense and other
+                confusion, including excess work and dealing with complaints. <br><br>
 
-                The plan is to utilize the most up-to-date edition of Adobe Photoshop for creating the logo. <br><br>
-                However, a
-                genuine license for it is costly. Consequently, you opt to obtain a pirated version from the internet.
-                <br>
-                Now, you may click on the 'View Attachment' option to access the website and initiate the download of
-                the pirated version.
+                Click on the 'View Attachment given to reveal a set of screenshots of various posts and messages from many
+                applications. Differentiate between them and choose the ones that are scams.
+
               </p>
 
               <!-- <div class="details">
@@ -156,9 +234,7 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
 
       <div class="vertical_container">
 
-        <a href="./challengepage5.html"><button class="buttonnext hori_move" onclick="next()">Next <span>&#8594;</span>
-          </button></a>
-        <a><button class="buttonnext">Submit </button></a> <br>
+        <a><button class="buttonnext" onclick="calculateScore()">Submit </button></a> <br>
 
         <div class="testimotionals">
           <div class="card2_specifics">
@@ -166,8 +242,10 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
               <div class="layer">
               </div>
               <div class="content">
-                <a target="_blank" href="./session1.html">
-                  <h6>View Attachment</h6>
+                <a target="_blank" href="./social media.html">
+                  <center>
+                    <h6>View Attachment</h6>
+                  </center>
                 </a>
                 <!-- <div class="details">
                   <h2> Someone famous <br> <span>Front end developer</span></h2>
@@ -181,25 +259,87 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
 
         <div class="testimotionals">
           <div class="card2_specifics">
-            <div class="card">
+            <div class="card" style="width: 9cm">
               <div class="layer">
               </div>
-              <div class="content">
+              <div class="content h6_move">
                 <h6>Options:</h6>
                 <!-- <div class="details">
                   <h2> Someone famous <br> <span>Website designer</span></h2>
                 </div> -->
+                <form>
+                  <p> Which feed do you think is legitimate(not scam)? </p>
+                  <div class="opts2">
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q1" name="q1">
+                      <label for="q1">Photo 1</label>
+                    </div>
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q2" name="q2" class="opts22">
+                      <label for="q2">Photo 2</label>
+                    </div>
+                  </div>
+
+                  <div class="opts2">
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q3" name="q3">
+                      <label for="q3">Photo 3</label>
+                    </div>
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q4" name="q4" class="opts22">
+                      <label for="q4">Photo 4</label>
+                    </div>
+                  </div>
+                  <div class="opts2">
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q5" name="q5">
+                      <label for="q5">Photo 5</label>
+                    </div>
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q6" name="q6" class="opts22">
+                      <label for="q6">Photo 6</label>
+                    </div>
+                  </div>
+                  <div class="opts2">
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q7" name="q7">
+                      <label for="q7">Photo 7</label>
+                    </div>
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q8" name="q8" class="opts22">
+                      <label for="q8">Photo 8</label>
+                    </div>
+                  </div>
+                  <div class="opts2">
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q9" name="q9">
+                      <label for="q8">Photo 9</label>
+                    </div>
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="q10" name="q10" class="opts22">
+                      <label for="q8">Photo 10</label>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
-
     </div>
   </div>
 
+  <div id="scoreModal1" class="modal1">
+    <div class="modal-content1">
+      <!-- <span class="close">&times;</span> -->
+      <p id="score1" class="submitbutton"></p>
+      <center>
+        <div><a href="./challengepage6.html"> <button class="buttonnext">Next
+              <span>&#8594;</span></button> </a>
+        </div>
+      </center>
+    </div>
+  </div>
 </body>
 
 <div class="footy_footer">

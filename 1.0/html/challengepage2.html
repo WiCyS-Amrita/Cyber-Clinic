@@ -41,6 +41,36 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
     width: 0;
   }
 
+  .modal1 {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    /* set a high z-index value to make it appear on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: black;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* add some opacity to the background */
+  }
+
+  .modal-content1 {
+    background-color: #fefefe;
+    margin: 15% auto;
+    color: black;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    /* add position:relative to make sure child elements are positioned relative to this parent element */
+  }
+
+
   @keyframes load {
     0% {
       width: 0;
@@ -49,6 +79,14 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
     100% {
       width: 40%;
     }
+  }
+
+  .option-container {
+    line-height: 20px;
+  }
+
+  .option-container label {
+    font-size: 20px;
   }
 </style>
 
@@ -67,6 +105,32 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
     let elapsedTime = timeCounter.textContent;
     console.log(elapsedTime);
     // do something with the elapsed time
+  }
+
+  function calculateScore() {
+    let score = 0;
+    document.getElementById('score1').innerHTML = 'Your score: ' + score;
+    showModal();
+  }
+
+  function showModal() {
+    let score = 0;
+    document.getElementById('score1').innerHTML = 'Your score: ' + score;
+    const modal = document.getElementById("scoreModal1");
+    const closeButton = document.querySelector(".close1");
+
+    modal.style.display = "block";
+
+    closeButton.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // Add this line to handle window click event properly
+    window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
   }
 </script>
 
@@ -133,15 +197,13 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
             </div>
             <div class="content biggerfont">
               <p style="font-size: 21px;">
-                As an employee at a military base with access to confidential information, you have been entrusted with
-                the responsibility of uploading and storing an important document on your personal laptop. <br><br>
-                In order to enhance security and prevent compromise, you are required to set up additional measures
-                beyond just
-                password protection. <br><br> One such measure involves the creation of security questions that must be
-                answered
-                correctly in order to access the document. <br><br> What would be the most effective questions to set up
-                in this
-                scenario?
+                You are Mary, who is an IT professional, working in tech support.As someone who recieves many calls,
+                spam and scam ones are common.
+                In a situation of technical difficulty, you missed to attend four different calls.
+                <br><br> It is also told that there will be an important call from an
+                organization, but was given no further information.<br><br>
+                Now, you can click on the <i> 'View Attachment' </i> option to listen to 4 recordings. <br><br>
+                NOTE: Points will be allocated on the basis of how correctly you differentiate between scam and authentic calls.
               </p>
 
               <!-- <div class="details">
@@ -154,9 +216,18 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
 
       <div class="vertical_container">
 
-        <a href="./challengepage3.html"><button class="buttonnext hori_move" onclick="next()">Next <span>&#8594;</span>
-          </button></a>
-        <a><button class="buttonnext">Submit </button></a> <br>
+        <a> <button class="buttonnext hori_move" onclick="calculateScore()">Submit
+          </button>
+        </a>
+
+        <div id="scoreModal1" class="modal1">
+          <div class="modal-content1">
+            <!-- <span class="close">&times;</span> -->
+            <p id="score1" class="submitbutton"></p>
+            <div style="margin-left:-7.8cm"><a href="./challengepage3.html"> <button class="buttonnext">Next
+                  <span>&#8594;</span></button> </a></div>
+          </div>
+        </div>
 
         <div class="testimotionals">
           <div class="card2_specifics">
@@ -164,7 +235,7 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
               <div class="layer">
               </div>
               <div class="content">
-                <a target="_blank" href="./social media.html">
+                <a target="_blank" href="./audio.html">
                   <center>
                     <h6>View Attachment</h6>
                   </center>
@@ -184,8 +255,29 @@ Description: Assessment Page containing Problem Description, Attachment (if any)
             <div class="card">
               <div class="layer">
               </div>
-              <div class="content">
+              <div class="content h6_move">
                 <h6>Options:</h6>
+                <p>
+                  Can you identify which among the four is genuine (NOT a scam)? <br>
+                <form>
+                  <div class="option-container">
+                    <input type="radio" id="option1" name="audioOption">
+                    <label for="option1">Audio 1</label>
+                  </div>
+                  <div class="option-container">
+                    <input type="radio" id="option2" name="audioOption">
+                    <label for="option2">Aduio 2</label>
+                  </div>
+                  <div class="option-container">
+                    <input type="radio" id="option3" name="audioOption">
+                    <label for="option3">Audio 3</label>
+                  </div>
+                  <div class="option-container">
+                    <input type="radio" id="option4" name="audioOption">
+                    <label for="option4">Audio 4</label>
+                  </div>
+                </form>
+                </p>
                 <!-- <div class="details">
                   <h2> Someone famous <br> <span>Website designer</span></h2>
                 </div> -->

@@ -508,6 +508,26 @@
             padding-bottom: 40px;
         }
     }
+
+    .buttonnext {
+		background-color: rgb(206, 172, 92);
+		color: rgb(0, 0, 0);
+		border: 1px solid black;
+		border-radius: 5px;
+		padding: 8px 16px;
+		font-size: 23px;
+		transition-duration: 0.4s;
+		cursor: pointer;
+		font-family: "Century Gothic", sans-serif;
+	}
+
+	.buttonnext:hover {
+		background-color: white;
+		color: black;
+		border: 1px solid black;
+		box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+	}
+
 </style>
 
 <body>
@@ -562,7 +582,7 @@
                         <div class="row row-space">
                         </div>
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                         <button class="buttonnext" onclick="window.open('challengepage1.html')">Submit & Start test</button> 
                         </div>
                     </form>
                 </div>
