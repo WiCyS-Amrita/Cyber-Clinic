@@ -1,0 +1,56 @@
+/* 
+Authors:  Deepthi Jayanth
+Created Date: 19 Apr 2023
+
+Description: Assessment Page containing Problem Description, Attachment (if any), Answer Box, Progress Bar */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #212020;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 8px;
+}
+
+.move_timer {
+  margin-left: 7cm;
+  margin-top: 0.8cm;
+  display: inline-flex;
+}
+.background_counter {
+  width: 200px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 5px 10px 5px 10px;
+  border-radius: 0.5rem;
+}
+
+.time-counter {
+  width: 40px;
+  margin-top: -2px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 5px 10px 5px 10px;
+  border-radius: 0.5rem;
+}
+
+
+.nav {
+  display: inline-flex;
+}
+
+.nav-left img {
+  width: 150px;
+  height: 50px;
+}
+
+.main_main_container {
+  display: inline-flex;
+}

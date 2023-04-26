@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<style>
+    body {
+        background-image: url("../images/challengepage_background.jpg");
+        background-size: 100%;
+    }
+
+    .card {
+        text-align: center;
+        width: 6cm;
+        height: 8.5cm;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        margin: 0 1cm 1cm 0;
+    }
+
+    .row1,
+    .row2 {
+        display: inline-flex;
+        margin-top: 1cm;
+        margin-left: 5.3cm;
+    }
+
+    .row1 {
+        margin-top: 2cm !important;
+    }
+
+    .card img {
+        margin-top: 0.5cm;
+        width: 120px;
+        height: 120px;
+    }
+
+    .checkbox-wrapper-25 input[type="checkbox"] {
+        background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, .1), hsla(0, 0%, 100%, .1)),
+            -webkit-linear-gradient(left, #da0303 50%, #a8d227 50%);
+        background-size: 100% 100%, 200% 100%;
+        background-position: 0 0, 15px 0;
+        border-radius: 25px;
+        box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, .5),
+            inset 0 0 10px hsla(0, 0%, 0%, .5),
+            0 0 0 1px hsla(0, 0%, 0%, .1),
+            0 -1px 2px 2px hsla(0, 0%, 0%, .25),
+            0 2px 2px 2px hsla(0, 0%, 100%, .75);
+        cursor: pointer;
+        height: 20px;
+        padding-right: 20px;
+        width: 60px;
+        -webkit-appearance: none;
+        -webkit-transition: .25s;
+        transition: all;
+        appearance: initial;
+    }
+
+    .checkbox-wrapper-25 {
+        margin-top: 0.5cm;
+        text-align: left;
+        line-height: 30px;
+    }
+
+    .checkbox-wrapper-25 span {
+        margin-left: 1cm;
+        display: inline-flex;
+    }
+
+    .checkbox-wrapper-25 span label {
+        margin-top: -2px;
+        margin-left: 5px;
+        font-size: 18px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .checkbox-wrapper-25 input[type="checkbox"]:after {
+        background-color: #eee;
+        background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 0%, .1));
+        border-radius: 25px;
+        box-shadow: inset 0 1px 1px 1px hsla(0, 0%, 100%, 1),
+            inset 0 -1px 1px 1px hsla(0, 0%, 0%, .25),
+            0 1px 3px 1px hsla(0, 0%, 0%, .5),
+            0 0 2px hsla(0, 0%, 0%, .25);
+        content: '';
+        display: block;
+        height: 20px;
+        width: 35px;
+    }
+
+    .checkbox-wrapper-25 input[type="checkbox"]:checked {
+        background-position: 0 0, 35px 0;
+        padding-left: 25px;
+        padding-right: 0;
+    }
+
+    .buttonnext {
+        background-color: rgb(219, 196, 140);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 8px 16px;
+        font-size: 27px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        font-family: "Century Gothic", sans-serif;
+        margin: 0.5cm 0 1cm 0;
+    }
+
+    .buttonnext:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .buttonnext span {
+        content: "\2192";
+    }
+
+    .submitbutton {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: rgb(0, 0, 0);
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        color: black;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        color: black;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .close {
+        color: #000000;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="row1">
+        <div class="card">
+            <img src="../images/apps/adobe-scan-200.png">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Camera</label> </span> <br>
+                <span> <input type="checkbox"> <label>Call logs </label> </span> <br>
+                <span> <input type="checkbox"> <label>Contacts</label> </span> <br>
+                <span> <input type="checkbox"> <label>Storage</label> </span> <br>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/apps/duolingo-logo-200.png">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Microphone</label> </span> <br>
+                <span> <input type="checkbox"> <label>Contacts</label> </span> <br>
+                <span> <input type="checkbox"> <label>Location</label> </span> <br>
+                <span> <input type="checkbox"> <label>Storage</label> </span> <br>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/apps/google-maps-200.png">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Contacts</label> </span> <br>
+                <span> <input type="checkbox"> <label>Location</label> </span> <br>
+                <span> <input type="checkbox"> <label>Call logs</label> </span> <br>
+                <span> <input type="checkbox"> <label>Microphone</label> </span> <br>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/apps/twitter-200.png">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Camera</label> </span> <br>
+                <span> <input type="checkbox"> <label>Calender</label> </span> <br>
+                <span> <input type="checkbox"> <label>Location</label> </span> <br>
+                <span> <input type="checkbox"> <label>Microphone</label> </span> <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="row2">
+        <div class="card">
+            <img src="../images/apps/youtube-200.png">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Camera</label> </span> <br>
+                <span> <input type="checkbox"> <label>Microphone</label> </span> <br>
+                <span> <input type="checkbox"> <label>storage</label> </span> <br>
+                <span> <input type="checkbox"> <label>contacts</label> </span> <br>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/apps/dropbox-200.png">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Location</label> </span> <br>
+                <span> <input type="checkbox"> <label>Storage</label> </span> <br>
+                <span> <input type="checkbox"> <label>SMS</label> </span> <br>
+                <span> <input type="checkbox"> <label>Call logs</label> </span> <br>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/apps/todolist.png"
+                style="width: 100px; height: 100px;margin-top:1cm; border-radius: 10px">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Call logs</label> </span> <br>
+                <span> <input type="checkbox"> <label>Storage</label> </span> <br>
+                <span> <input type="checkbox"> <label>Calendar</label> </span> <br>
+                <span> <input type="checkbox"> <label>Location</label> </span> <br>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../images/apps/myfitnesspal.png">
+            <div class="checkbox-wrapper-25">
+                <span> <input type="checkbox"> <label>Camera</label> </span> <br>
+                <span> <input type="checkbox"> <label>Storage</label> </span> <br>
+                <span> <input type="checkbox"> <label>Sensor</label> </span> <br>
+                <span> <input type="checkbox"> <label>Call logs</label> </span> <br>
+            </div>
+        </div>
+    </div>
+
+    <center>
+        <button class="buttonnext submitbutton" onclick="calculateScore()">Submit</button>
+        <div id="scoreModal" class="modal">
+            <div class="modal-content">
+                <!-- <span class="close">&times;</span> -->
+                <p id="score" class="submitbutton"></p>
+                <a href="./challengepage3.html"> <button class="buttonnext">Next <span>&#8594;</span></button> </a>
+            </div>
+        </div>
+    </center>
+
+
+</body>
+
+<script>
+    // Define the correct answers
+    const correctAnswers = [
+        false, true, false, true, // Adobe Scan
+        true, false, false, true, // Duolingo
+        false, true, true, false, // Google Maps
+        true, false, false, true, // Twitter
+        true, true, false, false, // YouTube
+        false, true, false, true, // Dropbox
+        true, true, false, false, // Todo List
+        true, false, false, true  // MyFitnessPal
+    ];
+
+    function calculateScore() {
+        let score = 0;
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked === correctAnswers[i]) {
+                score++;
+            } /* else {
+                score--;
+            }*/
+        }
+
+        document.getElementById('score').innerHTML = 'Your score: ' + score;
+        showModal();
+    }
+
+    function showModal() {
+        const modal = document.getElementById("scoreModal");
+        const closeButton = document.querySelector(".close");
+
+        modal.style.display = "block";
+
+        closeButton.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Add this line to handle window click event properly
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+</script>
+
+
+</html>

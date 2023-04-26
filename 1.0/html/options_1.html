@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CARTQ 1.0</title>
+    <link rel="icon" href="../images/favicon.png">
+    <link href="../css/challenge_body_stylesheet.css" rel="stylesheet">
+    <link href="../css/challenge_card_stylesheet.css" rel="stylesheet">
+    <link href="../css/challenge_menu_stylesheet.css" rel="stylesheet">
+    <link href="../css/challenge_progressbar_stylesheet.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<style>
+    /* 
+Authors:  Deepthi Jayanth
+Created Date: 19 Apr 2023
+
+Description: Assessment Page containing Problem Description, Attachment (if any), Answer Box, Progress Bar */
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background: #212020;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #b3b3b3;
+        border-radius: 8px;
+    }
+
+    .move_timer {
+        margin-left: 7cm;
+        margin-top: 0.8cm;
+        display: inline-flex;
+    }
+
+    .background_counter {
+        width: 200px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffffff;
+        padding: 5px 10px 5px 10px;
+        border-radius: 0.5rem;
+    }
+
+    .time-counter {
+        width: 40px;
+        margin-top: -2px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffffff;
+        padding: 5px 10px 5px 10px;
+        border-radius: 0.5rem;
+    }
+
+
+    .nav {
+        display: inline-flex;
+    }
+
+    .nav-left img {
+        width: 150px;
+        height: 50px;
+    }
+
+    .main_main_container {
+        display: inline-flex;
+    }
+
+    .main_container {
+        margin-left: 3.8cm;
+    }
+
+    .progress {
+        background: rgba(255, 255, 255, 0.1);
+        justify-content: flex-start;
+        border-radius: 100px;
+        align-items: center;
+        position: relative;
+        padding: 0 5px;
+        display: flex;
+        height: 30px;
+        width: 400px;
+        margin-left: -12cm;
+    }
+
+    .progress-value {
+        animation: load 3s normal forwards;
+        box-shadow: 0 10px 40px -10px #fff;
+        border-radius: 100px;
+        background: #fff;
+        height: 30px;
+        width: 0;
+    }
+
+    .card2_specifics .card .h6_move p {
+        margin-top: -20px;
+    }
+
+    @keyframes load {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 20%;
+        }
+    }
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid #b3b3b3;
+        background-color: #fff;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    input[type="radio"]:checked::before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 3px;
+        border-radius: 50%;
+        background-color: #b3b3b3;
+    }
+
+    .card2_specifics {
+        width: 10cm;
+    }
+
+    .modal1 {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        /* set a high z-index value to make it appear on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        color: black;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* add some opacity to the background */
+    }
+
+    .modal-content1 {
+        background-color: #fefefe;
+        margin: 15% auto;
+        color: black;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        font-size: 20px;
+        text-align: center;
+        position: relative;
+        /* add position:relative to make sure child elements are positioned relative to this parent element */
+    }
+
+    .close1 {
+        color: #000000;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+
+    .close1:hover,
+    .close1:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    window.onload = function () {
+        let timeCounter = document.querySelector('.time-counter');
+        let elapsedTime = 0;
+        setInterval(function () {
+            elapsedTime += 1;
+            timeCounter.textContent = elapsedTime;
+        }, 1000);
+    }
+
+    function next() {
+        let timeCounter = document.querySelector('.time-counter');
+        let elapsedTime = timeCounter.textContent;
+        console.log(elapsedTime);
+        // do something with the elapsed time
+    }
+
+    function calculateScore() {
+        let score = 0;
+        document.getElementById('score1').innerHTML = 'Your score: ' + score;
+        showModal();
+    }
+
+    function showModal() {
+        let score = 0;
+        document.getElementById('score1').innerHTML = 'Your score: ' + score;
+        const modal = document.getElementById("scoreModal1");
+        const closeButton = document.querySelector(".close1");
+
+        modal.style.display = "block";
+
+        closeButton.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Add this line to handle window click event properly
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+
+</script>
+
+<body>
+
+    <div class="nav">
+        <div class="nav-left">
+            <!-- <img src="../images/logo_for_resultpage.png"> -->
+            <div class="background_counter move_timer">Time Count: <span class="time-counter">0</span></div>
+        </div>
+
+        <div class="nav-right">
+            <div class="progress">
+                <div class="progress-value"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main_main_container">
+
+        <nav>
+            <ul>
+                <li>
+                    <div class="home-icon">
+                        <div class="roof">
+                            <div class="roof-edge"></div>
+                        </div>
+                        <div class="front"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="about-icon">
+                        <div class="head">
+                            <div class="eyes"></div>
+                            <div class="beard"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-icon">
+                        <div class="paper"></div>
+                        <div class="lines"></div>
+                        <div class="lines"></div>
+                        <div class="lines"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="mail-icon">
+                        <div class="mail-base">
+                            <div class="mail-top"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="main_container">
+            <div class="testimotionals">
+                <div class="card1_specifics">
+                    <div class="card">
+                        <div class="layer">
+
+                        </div>
+                        <div class="content biggerfont">
+                            <p style="font-size: 21px;">You're a graphic designer. Sitting in your home office, sipping
+                                your cup of
+                                hot coffee. <br><br> You take a deep
+                                breath and open up your design software, feeling inspired by the peaceful and serene
+                                morning.
+                                You start sketching out ideas to create a logo for a new project, a brand identity for a
+                                client who is
+                                launching a sustainable clothing line. <br><br>
+
+                                The plan is to utilize the most up-to-date edition of Adobe Photoshop for creating the
+                                logo. <br><br>
+                                However, a
+                                genuine license for it is costly. Consequently, you opt to obtain a pirated version from
+                                the internet.
+                                <br><br>
+                                Now, you may click on the <i> 'View Attachment'</i> option to access the website and
+                                initiate the download of
+                                the pirated version.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vertical_container">
+
+                <a> <button class="buttonnext hori_move" onclick="calculateScore()">Submit
+                    </button>
+                </a>
+
+                <div id="scoreModal1" class="modal1">
+                    <div class="modal-content1">
+                        <!-- <span class="close">&times;</span> -->
+                        <p id="score1" class="submitbutton"></p>
+                        <div style="margin-left:-7.8cm"><a href="./challengepage3.html"> <button class="buttonnext">Next
+                                    <span>&#8594;</span></button> </a></div>
+                    </div>
+                </div>
+
+                <!-- <div class="testimotionals">
+                    <div class="card2_specifics">
+                        <div class="card">
+                            <div class="layer">
+                            </div>
+                            <div class="content">
+                                <a target="_blank">
+                                    <center>
+                                        <h6><i>View Attachment</i></h6>
+                                    </center>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  -->
+
+                <div class="testimotionals">
+                    <div class="card2_specifics">
+                        <div class="card">
+                            <div class="layer">
+                            </div>
+                            <div class="content h6_move">
+                                <h6>Options:</h6>
+                                <p>
+                                    <input type="radio" name="option" id="option1" required>
+                                    <label for="option1" style="font-size: 16px !important">"I had a feeling that the
+                                        website was not legitimate, so I
+                                        decided to err on the side of caution and not share my password."</label><br>
+
+                                    <input type="radio" name="option" id="option2" required>
+                                    <label for="option2" style="font-size: 16px !important">"I was hesitant to provide
+                                        my password as I couldn't verify the
+                                        authenticity of the website."</label><br>
+
+                                    <input type="radio" name="option" id="option3" required>
+                                    <label for="option3" style="font-size: 16px !important">"I thought it was odd that
+                                        the website asked for my password
+                                        when I hadn't given my password in the first place."</label><br>
+
+                                    <input type="radio" name="option" id="option4" required>
+                                    <label for="option4" style="font-size: 16px !important">"The request sounded
+                                        slightly off, rather than what would have
+                                        been asked in a genuine website."</label><br>
+                                </p>
+                                <!-- <div class="details">
+                                <h2> Someone famous <br> <span>Website designer</span></h2>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+<div class="footy_footer">
+    <center>
+        &copy;2023 Cyber ART Quotient - WiCyS Amrita Student Chapter.
+    </center>
+</div>
+
+</html>

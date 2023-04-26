@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.card1_specifics {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin-top: -1cm;
+  width: 12cm;
+  height: 15cm;
+  /* margin-left: 3cm; */
+  transition: 0.3s;
+}
+
+.card1_specifics .card .content p{
+  font-size: 18px !important;
+}
+
+.biggerfont{
+  padding: 9px 27px;
+}
+
+.testimotionals .card1_specifics .card .content p {
+  text-align: justify;
+}
+
+.card2_specifics {
+  width: 9.5cm;
+  height: 3.5cm;
+  /* margin-left: 3cm; */
+  transition: 0.3s;
+}
+
+.card3_specifics {
+  width: 9.5cm;
+  height: 10cm;
+  /* background-color: #f4eee0; */
+  margin-top: 1.4cm;
+  transition: 0.3s;
+}
+
+.testimotionals {
+
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: 50px
+}
+
+.testimotionals .card {
+
+  position: relative;
+  overflow: hidden;
+  /* width:350px; */
+  margin: 0 auto;
+  background-color: #f4eee0;
+  /* padding:20px; */
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+
+  border-radius: 7px;
+  padding: 2px 16px;
+}
+
+.testimotionals .card .layer {
+  z-index: 1;
+  position: absolute;
+  top: calc(100% - 2px);
+  height: 200%;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(to left, #ffa500, tomato);
+  transition: 0.5s;
+
+}
+
+.testimotionals .card .content {
+  z-index: 2;
+  position: relative;
+  text-align: justify;
+}
+
+.card .content a {
+  color: rgb(0, 98, 255);
+}
+
+.h6_move h6{
+  margin-top: 10px;
+}
+
+.testimotionals .card:hover .layer {
+  top: 0;
+}
+
+.testimotionals .card .content p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+
+}
+
+.testimotionals .card .content .image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+}
+
+.testimotionals .card .content .details h2 {
+  font-size: 8px;
+  color: white;
+}
+
+.testimotionals .card .content .details h2 span {
+  font-size: 8px;
+  color: purple;
+  transition: 0.5s;
+}
+
+.testimotionals .card:hover .content .details h2 span {
+  color: white;
+  position: relative
+}
+
+body {
+  margin-bottom: 20px
+}
+
+
+.buttonnext {
+  margin-left: 8cm;
+  background-color: rgb(206, 172, 92);
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 23px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: "Century Gothic", sans-serif;
+}
+
+.buttonnext:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttonnext span {
+  content: "\2192";
+}

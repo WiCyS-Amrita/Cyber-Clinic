@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Cinzel:wght@500&family=Hind:wght@300&family=Luxurious+Roman&family=Poor+Story&family=Roboto+Slab&display=swap');
+
+body {
+  background-image: url('../images/challengepage_background.jpg');
+  background-repeat: no-repeat;
+  background-position: fixed;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: left;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 40px;
+}
+
+.nav-right {
+  margin-left: 68%;
+  margin-top: 2%;
+
+}
+
+.main_main_container {
+  display: inline-flex;
+}
+
+.main_container {
+  display: inline-flex;
+  margin-left: 5cm;
+  margin-top: 2cm;
+}
+
+.menu {
+  width: 6cm;
+  height: 13cm;
+  background-color: #f4eee0;
+  transition: 0.3s;
+}
+
+.vertical_container {
+  margin-left: 4cm;
+}
+
+.footy_footer {
+  font-size: 16px;
+  color: rgb(178, 193, 200);
+  margin-top: 3cm;
+  padding: 0 0 1cm 0;
+}
+
+.hori_move {
+  margin-left: 8cm !important;
+}
