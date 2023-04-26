@@ -1,1 +1,1 @@
-# Cyber-Clinic-1.0
+# Cyber Clinic 1.0
