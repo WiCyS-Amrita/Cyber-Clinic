@@ -25,7 +25,7 @@ body {
 
 .main_container {
   display: inline-flex;
-  margin-left: 5cm;
+  margin-left: 3.5cm;
   margin-top: 2cm;
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .vertical_container {
-  margin-left: 4cm;
+  margin-left: 2cm;
 }
 
 .footy_footer {

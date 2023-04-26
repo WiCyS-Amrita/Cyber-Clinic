@@ -600,6 +600,10 @@ nav .mbr-section-btn {
   -webkit-justify-content: space-between;
 }
 
+.navbar-nav {
+  margin-left: 3.1cm;
+}
+
 .navbar-collapse {
   -webkit-flex-basis: 100%;
   -webkit-flex-grow: 1;

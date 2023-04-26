@@ -4,17 +4,17 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   margin-top: -1cm;
-  width: 12cm;
+  width: 14cm;
   height: 15cm;
   /* margin-left: 3cm; */
   transition: 0.3s;
 }
 
-.card1_specifics .card .content p{
+.card1_specifics .card .content p {
   font-size: 18px !important;
 }
 
-.biggerfont{
+.biggerfont {
   padding: 9px 27px;
 }
 
@@ -82,8 +82,16 @@
   color: rgb(0, 98, 255);
 }
 
-.h6_move h6{
-  margin-top: 10px;
+.h6_move {
+  margin-top: -20px;
+}
+
+.h6_move h6 {
+  margin-top: 20px;
+}
+
+.h6_move p {
+  font-size: 18px !important;
 }
 
 .testimotionals .card:hover .layer {
