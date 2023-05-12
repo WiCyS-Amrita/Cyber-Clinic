@@ -16,7 +16,7 @@ Development Started: April 2023
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>CC 1.0 | Registration</title>
+    <title>CC 1.0 | Result Update</title>
 
     <!-- Icons font CSS-->
     <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -541,54 +541,29 @@ Development Started: April 2023
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-heading"></div>
-                <div class="card-body">
-                    <h2 class="title">Cyber Clinic 1.0 Registration form</h2>
-                    <form action="../php/insert.php" method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="NAME" name="name">
+                <div class="card-body">	
+                    <h2 class="title">Scorer</h2>
+                    <form action="../php/update_score.php" method="POST">
+					<div class="input-group">
+                            <input class="input--style-1" type="number" placeholder="Enter the CCID" name="ccid">
                         </div>
                         <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="dsgn">
-                                    <option disabled="disabled" selected="selected" required min="10">DESIGNATION</option>
-                                    <option value="0">School Student</option>
-                                    <option value="1">College Student</option>
-                                    <option value="2">Working Professional</option>
-                                    <option value="3">Senior citizen</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
+                            <input class="input--style-1" type="number" placeholder="Enter the mark for the Phishing Challenge" name="cp1">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="number" placeholder="PHONE" name="phnm">
+                            <input class="input--style-1" type="number" placeholder="Enter the mark for the Audio Challenge" name="cp2">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="email" placeholder="EMAIL" name="email">
+                            <input class="input--style-1" type="number" placeholder="Enter the mark for the Security Challenge" name="cp3">
                         </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-1" type="number" placeholder="AGE" name="age">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
-                                            <option disabled="disabled" selected="selected">GENDER</option>
-                                            <option value="0">Male</option>
-                                            <option value="1">Female</option>
-                                            <option value="2">Other</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
+						<div class="input-group">
+                            <input class="input--style-1" type="number" placeholder="Enter the mark for the Social Media Challenge" name="cp4">
                         </div>
-                        <div class="row row-space">
+                        <div class="input-group">
+                            <input class="input--style-1" type="number" placeholder="Enter the mark for the Permission Challenge" name="cp5">
                         </div>
                         <div class="p-t-20">
-                         <button class="buttonnext" >Submit & Start test</button> 
+                         <button class="buttonnext" >Update Score</button> 
                         </div>
                     </form>
                 </div>

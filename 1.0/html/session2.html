@@ -1,3 +1,9 @@
+<!--
+Cyber Clinic 1.0 
+Concept Team: Ramaguru Radhakrishnan, Deepthi J, Roshni V, Yaswanth G, Aishwarya G S
+Part of: Cyber ART Quotient
+Development Started: April 2023
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/session.css">
-    <title>Password Change</title>
+    <title>CC 1.0 | Password Change</title>
 </head>
 
 <body>
@@ -52,7 +58,7 @@
             <img src="../images/cross.png" width="200" height="200">
             <center> <h3>You failed the challenge</h3> </center>
             <div id="fail-popup-close" class="fail-popup-close">&times;</div>
-            <!-- <button type="button" class="next-button">Next</button> -->
+            <button type="button" id="next" class="next-button">Next Challenge</button>
         </div>
     </div>
 
@@ -62,6 +68,7 @@
         const popupClose = document.getElementById('popup-close');
         const popupOverlay = document.getElementById('popup-overlay');
         const gobackbutton = document.getElementById('goback');
+		const nextbutton = document.getElementById('next');
 
         learnMoreButton.addEventListener('click', () => {
             popup.style.display = 'flex';
@@ -70,11 +77,16 @@
         gobackbutton.addEventListener('click', () => { window.open("options_1.html", "_blank"); });
 
         popupClose.addEventListener('click', () => {
-            popup.style.display = 'none';
+            popup.style.display = 'none'; 
+			
         });
 
         popupOverlay.addEventListener('click', () => {
             popup.style.display = 'none';
+        });
+		
+		nextbutton.addEventListener('click', () => {
+            window.open("audio_2.html","_blank");
         });
 
         const submitButton = document.querySelector('.submit');

@@ -1,10 +1,16 @@
+<!--
+Cyber Clinic 1.0 
+Concept Team: Ramaguru Radhakrishnan, Deepthi J, Roshni V, Yaswanth G, Aishwarya G S
+Part of: Cyber ART Quotient
+Development Started: April 2023
+-->
 <!DOCTYPE html>
 <html>
-
 <head>
-
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC 1.0 | App Permissions</title>
 </head>
-
 <style>
     body {
         background-image: url("../images/challengepage_background.jpg");
@@ -251,7 +257,7 @@
             <div class="modal-content">
                 <!-- <span class="close">&times;</span> -->
                 <p id="score" class="submitbutton"></p>
-                <a href="./resultspage.html"> <button class="buttonnext">Finish Test </button> </a>
+                <a href="./resultupdate.html"> <button class="buttonnext">Finish Test </button> </a>
             </div>
         </div>
     </center>
@@ -279,9 +285,9 @@
         for (let i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i].checked === correctAnswers[i]) {
                 score++;
-            } /* else {
+            }  else {
                 score--;
-            }*/
+            }
         }
 
         document.getElementById('score').innerHTML = 'Your score: ' + score;
